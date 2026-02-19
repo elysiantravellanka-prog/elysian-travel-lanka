@@ -1,0 +1,420 @@
+@import "tailwindcss";
+@source "../";
+
+/* Custom Theme Variables for Tailwind v4 */
+@theme {
+  --color-gold: #c9a962;
+  --color-gold-light: #e5d4a1;
+  --color-gold-dark: #a88b4a;
+  --color-dark-primary: #0a1628;
+  --color-dark-secondary: #1a2744;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: #0a1628;
+  color: #ffffff;
+  overflow-x: hidden;
+  position: relative;
+}
+
+a,
+button {
+  transition: color 180ms ease, background-color 220ms ease, transform 320ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 320ms ease;
+}
+
+*:focus-visible {
+  outline: 2px solid #c9a962;
+  outline-offset: 3px;
+}
+
+/* Premium Typography */
+.font-display {
+  font-family: "Playfair Display", serif;
+}
+
+/* Glassmorphism Effects */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+}
+
+/* Gradient Text */
+.gradient-text {
+  background: linear-gradient(135deg, #c9a962 0%, #e5d4a1 50%, #c9a962 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Animated Gradient Border */
+.gradient-border {
+  position: relative;
+  background: linear-gradient(135deg, rgba(201, 169, 98, 0.08) 0%, rgba(201, 169, 98, 0.02) 100%);
+  border-radius: 24px;
+  border: 1px solid rgba(201, 169, 98, 0.2);
+}
+
+.hover-lift {
+  transition: transform 320ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 320ms ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.32);
+}
+
+.hover-glow:hover {
+  box-shadow: 0 12px 60px rgba(201, 169, 98, 0.25);
+}
+
+/* Animations */
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes pulse-glow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(201, 169, 98, 0.3);
+  }
+
+  50% {
+    box-shadow: 0 0 40px rgba(201, 169, 98, 0.6);
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scroll-bounce {
+
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+  }
+
+  50% {
+    transform: translateX(-50%) translateY(15px);
+    opacity: 0.3;
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease-out forwards;
+}
+
+/* Stagger delays */
+.delay-100 {
+  animation-delay: 100ms;
+}
+
+.delay-200 {
+  animation-delay: 200ms;
+}
+
+.delay-300 {
+  animation-delay: 300ms;
+}
+
+.delay-400 {
+  animation-delay: 400ms;
+}
+
+.delay-500 {
+  animation-delay: 500ms;
+}
+
+/* Premium Button Styles */
+.btn-primary {
+  background: linear-gradient(135deg, #c9a962 0%, #a88b4a 100%);
+  color: #0a1628;
+  font-weight: 600;
+  padding: 16px 32px;
+  border-radius: 50px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 12px 40px rgba(201, 169, 98, 0.28);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px) scale(1.01);
+  box-shadow: 0 16px 48px rgba(201, 169, 98, 0.45);
+}
+
+.btn-primary:active {
+  transform: translateY(0px) scale(0.99);
+  box-shadow: 0 10px 30px rgba(201, 169, 98, 0.3);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #ffffff;
+  font-weight: 500;
+  padding: 16px 32px;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.2);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-2px);
+}
+
+.btn-secondary:active {
+  transform: translateY(0px) scale(0.99);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+/* Card Hover Effects */
+.card-hover {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-10px) scale(1.01);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+  border-color: rgba(201, 169, 98, 0.35);
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+  width: 30px;
+  height: 50px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 25px;
+  position: relative;
+}
+
+.scroll-indicator::before {
+  content: '';
+  width: 6px;
+  height: 10px;
+  background: #c9a962;
+  border-radius: 3px;
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: scroll-bounce 2s infinite;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a1628;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c9a962;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #e5d4a1;
+}
+
+/* Selection */
+::selection {
+  background: rgba(201, 169, 98, 0.3);
+  color: #ffffff;
+}
+
+/* Video Background Styles */
+.video-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+}
+
+/* Noise Texture Overlay without extra markup */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.02;
+  z-index: 9999;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+/* Line Clamp Utilities */
+.line-clamp-1 {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Mobile-First Responsive Utilities */
+
+/* Touch-friendly tap targets */
+.touch-target {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Responsive Typography */
+@media (max-width: 640px) {
+  .font-display {
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Responsive Padding Utilities */
+.px-safe {
+  padding-left: max(1rem, env(safe-area-inset-left));
+  padding-right: max(1rem, env(safe-area-inset-right));
+}
+
+/* Mobile-optimized glass effects */
+@media (max-width: 768px) {
+  .glass {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  .glass-card {
+    border-radius: 16px;
+  }
+
+  .gradient-border {
+    border-radius: 16px;
+  }
+}
+
+/* Responsive Button Sizes */
+@media (max-width: 640px) {
+  .btn-primary {
+    padding: 14px 24px;
+    font-size: 0.9rem;
+  }
+
+  .btn-secondary {
+    padding: 14px 24px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Responsive Card Hover - Disable on touch devices */
+@media (hover: none) {
+  .card-hover:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .hover-lift:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+/* Mobile Scroll Snap */
+.scroll-snap-x {
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.scroll-snap-x > * {
+  scroll-snap-align: start;
+}
+
+/* Responsive Image Handling */
+.img-responsive {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Mobile Form Improvements */
+@media (max-width: 640px) {
+  input,
+  textarea,
+  select {
+    font-size: 16px; /* Prevents iOS zoom on focus */
+  }
+}
+
+/* Safe Area Support for Notch Devices */
+@supports (padding-top: env(safe-area-inset-top)) {
+  .safe-top {
+    padding-top: env(safe-area-inset-top);
+  }
+
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+/* Reduced Motion Preferences */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
